@@ -27,9 +27,8 @@ pip install -r requirements.txt
 
 Step 3: Setup MongoDB
 
-> - Start MongoDb
-> - replace <mongodb-connection-string\> with actual connection string
->   in config/db.py
+> - Start MongoDb create database with name `access_control`
+> - replace <mongodb-connection-string\> with actual connection string in config/db.py
 
 Step 4: Run main.py using uvicorn
 
