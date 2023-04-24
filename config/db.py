@@ -1,8 +1,6 @@
 from pymongo import MongoClient
-import json
 
-with open('config.json') as config:
-    print(config.read())
+
 database = MongoClient('mongodb://localhost:27017')
 users_collection = database.access_control.users
 organisations_collection = database.access_control.organisations
