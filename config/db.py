@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 
 
-database = MongoClient('mongodb://localhost:27017')
+database = MongoClient('<mongodb-connection-string>')
 users_collection = database.access_control.users
 organisations_collection = database.access_control.organisations
 if 'user_name_index' not in users_collection.index_information():
