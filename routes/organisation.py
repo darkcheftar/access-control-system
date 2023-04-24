@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from models.organisation import Organisation
 from config.db import organisations_collection, users_collection
-from utils.organisation import serialize_organisations
+from utils.organisation import serialize_organisations,serialize_organisation
 from bson import ObjectId
 from pymongo.errors import DuplicateKeyError
 from pymongo import UpdateMany
@@ -15,8 +15,8 @@ organisation = APIRouter()
 @organisation.post('/')
 async def create_organisation(organisation:Organisation):
     try:
-        organisations_collection.insert_one(dict(organisation))
-        return serialize_organisations(organisations_collection.find())
+        response = organisations_collection.insert_one(dict(organisation))
+        return serialize_organisation(organisations_collection.find_one({'_id':response.inserted_id}))
     except DuplicateKeyError as e:
         raise HTTPException(status_code=400, detail="organisation already exists")
 
