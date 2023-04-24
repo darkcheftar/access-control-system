@@ -46,7 +46,7 @@ Finally App will be live at localhost:8000
   1. Creating another collection which contains the permission information required
   2. Creating a field organisations in user model
   3. Creating a field users in organisation model
-  4. A mixture of `3` and `4`
+  4. Creating both a field organisations in user model and a field users in organisation model
 
 As per the given situation I felt using option 2 is good
 
