@@ -7,5 +7,5 @@ app = FastAPI()
 app.include_router(user, prefix='/user')
 app.include_router(organisation, prefix='/organisation')
 @app.get('/')
-def read_root():
-    return "go to /user"
+def welcome_page():
+    return "go to /user or /organisations or /docs"
