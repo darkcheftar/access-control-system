@@ -37,7 +37,7 @@ Step 4: Run main.py using uvicorn
 uvicorn main:app --reload
 ```
 
-Finally App will be live at localhost:5000
+Finally App will be live at localhost:8000
 
 ## Idea
 
